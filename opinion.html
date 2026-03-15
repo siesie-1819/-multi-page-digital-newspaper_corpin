@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Opinion | Malanday Community Times</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f8f9fb;
+}
+
+.page{
+transition:margin-left 0.4s ease;
+}
+
+#menuToggle{
+display:none;
+}
+
+.menuIcon{
+position:fixed;
+top:18px;
+right:18px;
+font-size:28px;
+background:#ffb7a5;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+z-index:1100;
+}
+
+.menuIcon:hover{
+background:#ff8f70;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#2c2c2c;
+padding-top:80px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid #444;
+}
+
+.sidebar a:hover{
+background:#ffb7a5;
+}
+
+.sidebar a.active{
+background:#ff8f70;
+font-weight:bold;
+}
+
+#menuToggle:checked ~ .sidebar{
+left:0;
+}
+
+#menuToggle:checked ~ .page{
+margin-left:250px;
+}
+
+.header{
+background:linear-gradient(90deg,#ffd6c9,#ffe5dd);
+text-align:center;
+padding:35px 20px;
+border-bottom:5px solid #ffb7a5;
+}
+
+.title{
+font-size:48px;
+border:4px solid #ffb7a5;
+display:inline-block;
+padding:12px 35px;
+color:#444;
+background:white;
+border-radius:8px;
+}
+
+.title::before{
+content:"✦ ";
+color:#ff8f70;
+}
+
+.title::after{
+content:" ✦";
+color:#ff8f70;
+}
+
+.tagline{
+font-style:italic;
+margin-top:10px;
+font-size:18px;
+}
+
+.info{
+font-size:14px;
+margin-top:5px;
+color:#666;
+}
+
+.container{
+padding:40px 10%;
+}
+
+.editorial{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.editorial h2{
+color:#ff8f70;
+margin-top:0;
+}
+
+.editorial h3{
+color:#444;
+margin-top:25px;
+border-left:5px solid #ffb7a5;
+padding-left:10px;
+}
+
+.editorial p{
+font-size:18px;
+line-height:1.8;
+}
+
+.highlight{
+background:#fff3ef;
+padding:3px 6px;
+border-radius:4px;
+font-weight:bold;
+}
+
+.references{
+margin-top:40px;
+background:#fff3ef;
+padding:25px;
+border-radius:10px;
+}
+
+.references h3{
+color:#ff8f70;
+margin-top:0;
+}
+
+footer{
+background:#2c2c2c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+footer span{
+color:#ffb7a5;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle" class="menuIcon">☰</label>
+
+<div class="sidebar">
+<a href="index.html">Home</a>
+<a href="localnews.html">Local News</a>
+<a href="community.html">Community</a>
+<a href="opinion.html" class="active">Opinion</a>
+<a href="future.html">Future</a>
+</div>
+
+<div class="page">
+
+<div class="header">
+<div class="title">Malanday Community Times</div>
+<div class="tagline">The Voice of Barangay Malanday</div>
+<div class="info">March 2026 | Opinion Page</div>
+</div>
+
+<div class="container">
+
+<div class="editorial">
+
+<h2>Marikina’s Flood Control: A Model for Clean and Safe Communities</h2>
+
+<h3>State Your Opinion Clearly</h3>
+<p>
+In my opinion, <span class="highlight">Marikina City</span> has become one of the cleanest and most organized cities in Metro Manila. Because of the leadership of <span class="highlight">Mayor Marcelino “Marcy” Teodoro</span>, flooding in the city is no longer as severe as before. The improvement of <span class="highlight">flood control systems</span> and better monitoring of the <span class="highlight">Marikina River</span> helped protect many communities during heavy rains.
+</p>
+
+<h3>Give Reasons</h3>
+<p>
+One reason flooding has improved is the construction of stronger <span class="highlight">riverbank linings</span> and the regular cleaning of waterways. These projects help control the flow of water and prevent the river from overflowing during strong rainfall.
+</p>
+
+<h3>Suggest Solutions</h3>
+<p>
+To continue these improvements, the local government and residents should maintain <span class="highlight">proper waste disposal</span> and support environmental programs. Keeping canals and drainage systems clean will help prevent flooding in the future.
+</p>
+
+<h3>Call to Action</h3>
+<p>
+Everyone in the community should participate in <span class="highlight">cleanup activities</span> and help protect the environment. If citizens and leaders work together, Marikina can continue to be a model city for <span class="highlight">flood prevention and cleanliness</span>.
+</p>
+
+</div>
+
+<div class="references">
+
+<h3>References</h3>
+
+<ul>
+<li>Marikina City Government Official Website</li>
+<li>PAGASA Flood Monitoring Reports</li>
+<li>Department of Environment and Natural Resources (DENR)</li>
+<li>Marikina City Disaster Risk Reduction and Management Office</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Malanday Community Times</p>
+<p>Designed by <span>Sie</span></p>
+</footer>
+
+</div>
+
+</body>
+</html>
