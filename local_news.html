@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local News | Malanday Community Times</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f8f9fb;
+}
+
+.page{
+transition:margin-left 0.4s ease;
+}
+
+#menuToggle{
+display:none;
+}
+
+.menuIcon{
+position:fixed;
+top:18px;
+right:18px;
+font-size:28px;
+background:#ffb7a5;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+z-index:1100;
+transition:0.3s;
+}
+
+.menuIcon:hover{
+background:#ff8f70;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#2c2c2c;
+padding-top:80px;
+transition:0.4s;
+z-index:1000;
+}
+
+.sidebar a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid #444;
+}
+
+.sidebar a:hover{
+background:#ffb7a5;
+}
+
+.sidebar a.active{
+background:#ff8f70;
+font-weight:bold;
+}
+
+#menuToggle:checked ~ .sidebar{
+left:0;
+}
+
+#menuToggle:checked ~ .page{
+margin-left:250px;
+}
+
+.header{
+background:linear-gradient(90deg,#ffd6c9,#ffe5dd);
+text-align:center;
+padding:35px 20px;
+border-bottom:5px solid #ffb7a5;
+}
+
+.title{
+font-size:48px;
+border:4px solid #ffb7a5;
+display:inline-block;
+padding:12px 35px;
+color:#444;
+background:white;
+border-radius:8px;
+}
+
+.title::before{
+content:"✦ ";
+color:#ff8f70;
+}
+
+.title::after{
+content:" ✦";
+color:#ff8f70;
+}
+
+.tagline{
+font-style:italic;
+font-family:"Trebuchet MS", sans-serif;
+margin-top:10px;
+font-size:18px;
+}
+
+.info{
+font-size:14px;
+margin-top:5px;
+color:#666;
+}
+
+.breaking{
+background:#ffb7a5;
+text-align:center;
+padding:12px;
+font-weight:bold;
+letter-spacing:1px;
+color:white;
+}
+
+.container{
+padding:40px 10%;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+transition:0.3s;
+text-decoration:none;
+color:black;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.card h3{
+color:#ff8f70;
+}
+
+.article{
+padding:60px 10%;
+background:white;
+}
+
+.article img{
+width:100%;
+max-width:700px;
+height:320px;
+object-fit:cover;
+border-radius:10px;
+margin:20px 0;
+}
+
+.article h2{
+color:#ff8f70;
+}
+
+.sub{
+font-style:italic;
+color:gray;
+}
+
+.article p{
+font-size:17px;
+line-height:1.7;
+}
+
+.article p::first-letter{
+font-size:55px;
+float:left;
+padding-right:8px;
+font-weight:bold;
+color:#ff8f70;
+}
+#article1,
+#article2,
+#article3,
+#article4,
+#article5{
+display:none;
+padding:60px 10%;
+background:#ffffff;
+opacity:0;
+transition:opacity 0.5s ease;
+}
+
+#article1:target,
+#article2:target,
+#article3:target,
+#article4:target,
+#article5:target{
+display:block;
+opacity:1;
+}
+
+.article img{
+width:100%;
+max-width:700px;
+height:320px;
+object-fit:cover;
+border-radius:10px;
+margin:20px 0;
+}
+
+.article h2{
+color:#ff8f70;
+}
+
+.sub{
+font-style:italic;
+color:gray;
+margin-bottom:10px;
+}
+
+.article p{
+font-size:17px;
+line-height:1.7;
+}
+
+.article p::first-letter{
+font-size:55px;
+float:left;
+line-height:1;
+padding-right:8px;
+font-weight:bold;
+color:#ff8f70;
+}
+.article{
+padding:70px 15%;
+background:white;
+margin-top:50px;
+border-top:5px solid #ffb7a5;
+display:none;
+animation:fadeIn 0.6s ease;
+}
+
+.article:target{
+display:block;
+}
+
+.back{
+display:inline-block;
+margin-top:20px;
+padding:10px 18px;
+background:#ffb7a5;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+.back:hover{
+background:#ff8f70;
+}
+
+footer{
+background:#2c2c2c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+footer span{
+color:#ffb7a5;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menuToggle">
+
+<label for="menuToggle" class="menuIcon">☰</label>
+
+<div class="sidebar">
+<a href="index.html">Home</a>
+<a href="localnews.html" class="active">Local News</a>
+<a href="community.html">Community</a>
+<a href="opinion.html">Opinion</a>
+<a href="future.html">Future</a>
+</div>
+
+<div class="page">
+
+<div class="header">
+
+<div class="title">Malanday Community Times</div>
+
+<div class="tagline">
+The Voice of Barangay Malanday
+</div>
+
+<div class="info">
+March 15, 2026 | Local News Section | Marikina City
+</div>
+
+</div>
+
+<div class="breaking">
+LATEST LOCAL NEWS AND COMMUNITY UPDATES
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<a href="#article1" class="card">
+<img src="https://dzrh.com.ph/_next/image?url=https%3A%2F%2Fdzrh-bucket.s3.ap-southeast-1.amazonaws.com%2Ffeaturedimage%2Fmarikina-fire%2FPPT%2520MBC%2520%25289%2529.jpg&w=3840&q=50">
+<h3>Warehouse Fire in Barangay Malanday</h3>
+<p>Firefighters quickly responded to control the blaze.</p>
+</a>
+
+<a href="#article2" class="card">
+<img src="https://cdn.manilastandard.net/wp-content/uploads/2023/07/A6-pic-2-Marikina-rescue-riding-the-rescue-boat-3-scaled.jpg">
+<h3>Marikina River Water Level Monitored</h3>
+<p>Officials track river levels after heavy rains.</p>
+</a>
+
+<a href="#article3" class="card">
+<img src="https://scontent.fmnl3-4.fna.fbcdn.net/v/t39.30808-6/646875416_1439549258220326_1007589531607129900_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=p603ELyG9T4Q7kNvwE5aCm9&_nc_oc=AdnEWHylOQvtU-l2X0C4XZfrmQSEINU3Jocl9vZ-Xi7pHkDqP1Hy-Knl2IMSyNy7vXShYsZhKnrNTo_hdUodlI6H&_nc_zt=23&_nc_ht=scontent.fmnl3-4.fna&_nc_gid=9mUWGztZjY82NxePjVVPwg&_nc_ss=8&oh=00_AfzI4ShQZGPGkosCfZ9U6hIESHnuFRL3Oc9xlwHC2nREGA&oe=69BC7ADD">
+<h3>City Conducts Flood Cleanup</h3>
+<p>Workers remove debris after recent flooding.</p>
+</a>
+
+<a href="#article4" class="card">
+<img src="https://pia.gov.ph/wp-content/uploads/2025/12/fEATURED-image-6.jpg">
+<h3>Community Sports Program Launched</h3>
+<p>Youth activities encourage healthy lifestyle.</p>
+</a>
+
+<a href="#article5" class="card">
+<img src="https://files01.pna.gov.ph/source/2023/10/10/marikina-river-rehabilitation-10092023jor-3.jpg">
+<h3>River Rehabilitation Continues</h3>
+<p>Environmental cleanup improves waterways.</p>
+</a>
+
+
+</div>
+
+</div>
+<section id="article1" class="article">
+
+<h2>Warehouse Fire in Barangay Malanday</h2>
+<p class="sub">Firefighters respond quickly to contain the blaze</p>
+
+<img src="https://media.philstar.com/photos/2025/02/12/ire_2025-02-12_23-58-48.jpg">
+<p>
+A warehouse fire recently occurred in Barangay Malanday in Marikina City, causing concern among nearby residents and business owners. Witnesses reported seeing thick black smoke rising from the building early in the morning. Some residents immediately alerted authorities and firefighters after noticing the flames spreading rapidly. The incident caused temporary panic in the surrounding area as people moved away from the site for safety. Local officials also advised nearby establishments to close temporarily while emergency teams handled the situation.
+</p>
+
+<p>
+Several fire trucks arrived at the scene and firefighters worked for hours to control the fire and prevent it from spreading to nearby houses. Emergency responders coordinated their efforts to ensure that residents remained safe during the operation. Fortunately, no serious injuries were reported during the incident. Authorities later declared the fire under control after extensive firefighting operations. Investigators are now working to determine the possible cause of the fire and estimate the amount of damage to the property.
+</p>
+
+<a href="#" class="back">Back to News</a>
+
+</section>
+
+<section id="article2" class="article">
+
+<h2>Marikina River Water Level Closely Monitored</h2>
+<p class="sub">Local officials prepare for possible flooding</p>
+
+<img src="https://media.assettype.com/tribune%2F2025-07-19%2Fayv923e5%2F2025Jul19Marikina-8.jpg?w=480&auto=format%2Ccompress">
+
+<p>
+Authorities in Marikina City are closely monitoring the water level of the Marikina River after several days of heavy rainfall across Metro Manila. The river is known to rise quickly during intense weather conditions, which may cause flooding in nearby communities. Residents living near the riverbanks, including those in Barangay Malanday, were advised to stay alert and prepare emergency supplies. Local disaster response teams were also placed on standby to assist families if evacuation becomes necessary.
+</p>
+
+<p>
+City officials explained that early monitoring of river levels is important to ensure the safety of residents in flood-prone areas. Modern monitoring systems installed along the river help authorities track water levels in real time. When the river reaches certain warning levels, alerts are immediately sent to the community. Residents are encouraged to follow safety guidelines and evacuation instructions when necessary. These preventive measures help reduce the risk of danger during strong storms and heavy rainfall.
+</p>
+
+<a href="#" class="back">Back to News</a>
+
+</section>
+
+<section id="article3" class="article">
+
+<h2>City Conducts Cleanup After Flooding</h2>
+<p class="sub">Clearing operations restore roads and drainage</p>
+
+<img src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/645425429_1439549251553660_1702291329897273460_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=b-zFNMggIJ4Q7kNvwFKKtyR&_nc_oc=AdmdTauI_RNhkYs88aUpqvsrBTn-cxHbATjn03qbdVSPyzBzV7kNuKlRDizwHS97SJx1zpnNrIJKTdceYHcM37ho&_nc_zt=23&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=ycDsy2B2NlhSKgFQ87ULiA&_nc_ss=8&oh=00_AfwvNqQPwz-ZWDrwO_Dr17jtAmn_WlFCzPXbCRPrY0sEyA&oe=69BC82B5">
+
+<p>
+After recent flooding in several parts of Marikina City, the local government conducted large-scale cleanup operations to restore affected areas. Floodwaters left behind mud, debris, and garbage that blocked roads and drainage systems. Cleanup teams were immediately deployed to remove waste and clear blocked waterways. Workers focused on areas near Barangay Malanday where floodwater had recently receded. Residents also joined the cleanup activities to help speed up the restoration of their community.
+</p>
+
+<p>
+City officials explained that regular cleanup operations are essential to prevent further flooding in the future. Clearing drainage canals helps ensure that rainwater can flow properly during storms. Community volunteers and local organizations also participated in the effort to support the city’s program. Authorities encouraged residents to practice proper waste disposal and avoid throwing garbage into rivers or canals. Maintaining clean waterways is an important step in protecting communities from flooding.
+</p>
+
+<a href="#" class="back">Back to News</a>
+
+</section>
+
+<section id="article4" class="article">
+
+<h2>Community Sports Program Launched for Youth</h2>
+<p class="sub">Local leaders encourage healthy activities</p>
+
+<img src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/482985973_1033963382086565_8156863288714416578_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=82RI11oZRtoQ7kNvwEq2h65&_nc_oc=AdnS4DpMRH5kJMwunGbBEcukt2bPxIqbQun2z8uA_ik_7NUrTSx_f45S6Ym9PwwPMg6IskXwGjeiQ3zqEWSgkTcv&_nc_zt=23&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=MZYYAsU6S1YH6Y_nsaL3rw&_nc_ss=8&oh=00_AfzYOtzFVNaHmoUc0ziBsPpydmI11fCwlygi_byy7BF45g&oe=69BC825F">
+
+<p>
+Barangay Malanday recently launched a new community sports program designed to encourage young residents to participate in healthy and productive activities. The program includes basketball tournaments, volleyball matches, and other recreational events for the youth. Many students and young athletes from nearby neighborhoods joined the opening activities. Local leaders believe that sports programs help promote discipline, teamwork, and leadership skills among young people.
+</p>
+
+<p>
+Aside from physical fitness, sports activities also provide opportunities for residents to interact and build stronger relationships. Community leaders hope that these programs will help reduce negative influences and encourage positive youth development. Parents and volunteers have also expressed support for the initiative. Organizers plan to continue holding sports events throughout the year. The program is expected to grow and benefit more young residents in the future.
+</p>
+
+<a href="#" class="back">Back to News</a>
+
+</section>
+
+<section id="article5" class="article">
+
+<h2>River Rehabilitation Projects Continue</h2>
+<p class="sub">Environmental efforts aim to reduce flooding</p>
+
+<img src="https://scontent.fmnl3-3.fna.fbcdn.net/v/t39.30808-6/478443694_1057274076439079_4213655493401098859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=2lAiQmroYYoQ7kNvwEXL8Ow&_nc_oc=AdneufteRTVhRf-e8T_ZLnRnaXiPIlPa6lt66wtL7IjcFzWAozXxhYsKAL3_ZqQv-FozZu23WPT7lyPExgHhgXzB&_nc_zt=23&_nc_ht=scontent.fmnl3-3.fna&_nc_gid=CywMg_1xqu9sRVSOFAwtrg&_nc_ss=8&oh=00_AfxLq4th5_qNGwAqeE6gkYxPFEQTRWl9epDENNLix8ejng&oe=69BC79ED">
+
+<p>
+Environmental cleanup and rehabilitation projects continue along the Marikina River as part of ongoing efforts to improve water flow and protect nearby communities. Government agencies and local volunteers regularly organize cleanup drives along the riverbanks. These activities involve removing garbage, clearing debris, and improving the condition of the waterways. Such initiatives help prevent the accumulation of waste that can block the flow of water during heavy rains.
+</p>
+
+<p>
+Officials believe that maintaining a clean river system can significantly reduce the risk of flooding in surrounding areas. Educational campaigns are also being conducted to teach residents about proper waste management and environmental responsibility. Community cooperation plays an important role in the success of these programs. Residents are encouraged to participate in cleanup activities and support environmental protection efforts. Together, these actions help preserve the natural environment and protect the safety of the community.
+</p>
+
+<a href="#" class="back">Back to News</a>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Malanday Community Times</p>
+
+<p>Designed by <span>Sie</span></p>
+
+</footer>
+
+</div>
+
+</body>
+</html>
