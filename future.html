@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Future | Malanday Community Times</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f8f9fb;
+}
+
+.page{
+transition:margin-left 0.4s ease;
+}
+
+#menuToggle{
+display:none;
+}
+
+.menuIcon{
+position:fixed;
+top:18px;
+right:18px;
+font-size:28px;
+background:#ffb7a5;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+z-index:1100;
+}
+
+.menuIcon:hover{
+background:#ff8f70;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#2c2c2c;
+padding-top:80px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid #444;
+}
+
+.sidebar a:hover{
+background:#ffb7a5;
+}
+
+.sidebar a.active{
+background:#ff8f70;
+font-weight:bold;
+}
+
+#menuToggle:checked ~ .sidebar{
+left:0;
+}
+
+#menuToggle:checked ~ .page{
+margin-left:250px;
+}
+
+.header{
+background:linear-gradient(90deg,#ffd6c9,#ffe5dd);
+text-align:center;
+padding:35px 20px;
+border-bottom:5px solid #ffb7a5;
+}
+
+.title{
+font-size:48px;
+border:4px solid #ffb7a5;
+display:inline-block;
+padding:12px 35px;
+color:#444;
+background:white;
+border-radius:8px;
+}
+
+.title::before{
+content:"✦ ";
+color:#ff8f70;
+}
+
+.title::after{
+content:" ✦";
+color:#ff8f70;
+}
+
+.tagline{
+font-style:italic;
+margin-top:10px;
+font-size:18px;
+}
+
+.info{
+font-size:14px;
+margin-top:5px;
+color:#666;
+}
+
+.container{
+padding:40px 10%;
+}
+
+.futureBox{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+}
+
+.futureBox h2{
+color:#ff8f70;
+margin-top:0;
+}
+
+.futureBox p{
+font-size:18px;
+line-height:1.8;
+}
+
+.highlight{
+background:#fff3ef;
+padding:3px 6px;
+border-radius:4px;
+font-weight:bold;
+}
+
+.futureImg{
+width:100%;
+max-width:700px;
+display:block;
+margin:20px auto;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+.caption{
+text-align:center;
+font-style:italic;
+color:#666;
+margin-bottom:25px;
+}
+
+footer{
+background:#2c2c2c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+footer span{
+color:#ffb7a5;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menuToggle">
+<label for="menuToggle" class="menuIcon">☰</label>
+
+<div class="sidebar">
+<a href="index.html">Home</a>
+<a href="localnews.html">Local News</a>
+<a href="community.html">Community</a>
+<a href="opinion.html">Opinion</a>
+<a href="future.html" class="active">Future</a>
+</div>
+
+<div class="page">
+
+<div class="header">
+<div class="title">Malanday Community Times</div>
+<div class="tagline">The Voice of Barangay Malanday</div>
+<div class="info">March 2026 | Future Page</div>
+</div>
+
+<div class="container">
+
+<div class="futureBox">
+
+<h2>Our Community in 2035</h2>
+
+<img src="https://i.pinimg.com/1200x/05/97/c3/0597c31f8666461c2ef76ce5322a83e2.jpg">
+
+
+<p>
+In the year 2035, our community may become a place where <span class="highlight">technology and education</span> work together to improve learning. Schools could have <span class="highlight">smart classrooms</span> with interactive screens, digital books, and modern learning tools that help students understand lessons better. Teachers may use technology to make classes more engaging and interactive for young learners.
+</p>
+
+<p>
+Transportation in the community may also improve through <span class="highlight">modern public transportation systems</span> and better road planning. Travel could become faster and safer for residents, students, and workers. With organized transportation, traffic congestion may decrease and people can move around the city more efficiently.
+</p>
+
+<p>
+The future may also bring more <span class="highlight">youth programs and digital government services</span> that help the community grow. Young people may join leadership programs, sports activities, and technology workshops that help develop their talents. Government services could also become digital so residents can easily access documents and services online. With cooperation between leaders and citizens, our community can grow into a <span class="highlight">modern, safe, and progressive place</span> for future generations.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Malanday Community Times</p>
+<p>Designed by <span>Sie</span></p>
+</footer>
+
+</div>
+
+</body>
+</html>
