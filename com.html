@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Community | Malanday Community Times</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f8f9fb;
+}
+
+.page{
+transition:margin-left 0.4s ease;
+}
+
+#menuToggle{
+display:none;
+}
+
+.menuIcon{
+position:fixed;
+top:18px;
+right:18px;
+font-size:28px;
+background:#ffb7a5;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+z-index:1100;
+}
+
+.menuIcon:hover{
+background:#ff8f70;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#2c2c2c;
+padding-top:80px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:15px 20px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid #444;
+}
+
+.sidebar a:hover{
+background:#ffb7a5;
+}
+
+.sidebar a.active{
+background:#ff8f70;
+font-weight:bold;
+}
+
+#menuToggle:checked ~ .sidebar{
+left:0;
+}
+
+#menuToggle:checked ~ .page{
+margin-left:250px;
+}
+
+.header{
+background:linear-gradient(90deg,#ffd6c9,#ffe5dd);
+text-align:center;
+padding:35px 20px;
+border-bottom:5px solid #ffb7a5;
+}
+
+.title{
+font-size:48px;
+border:4px solid #ffb7a5;
+display:inline-block;
+padding:12px 35px;
+color:#444;
+background:white;
+border-radius:8px;
+}
+
+.title::before{
+content:"✦ ";
+color:#ff8f70;
+}
+
+.title::after{
+content:" ✦";
+color:#ff8f70;
+}
+
+.tagline{
+font-style:italic;
+font-family:"Trebuchet MS", sans-serif;
+margin-top:10px;
+font-size:18px;
+}
+
+.info{
+font-size:14px;
+margin-top:5px;
+color:#666;
+}
+
+.breaking{
+background:#ffb7a5;
+text-align:center;
+padding:12px;
+font-weight:bold;
+letter-spacing:1px;
+color:white;
+}
+
+.container{
+padding:40px 10%;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card h2{
+color:#ff8f70;
+margin-top:0;
+}
+
+.highlight{
+background:#fff3ef;
+padding:3px 6px;
+border-radius:4px;
+font-weight:bold;
+}
+
+.issues{
+line-height:1.8;
+font-size:17px;
+}
+
+.events{
+list-style:none;
+padding-left:0;
+font-size:17px;
+line-height:2;
+}
+
+.events li::before{
+content:"♥ ";
+color:#ff8f70;
+}
+
+footer{
+background:#2c2c2c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+footer span{
+color:#ffb7a5;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menuToggle">
+
+<label for="menuToggle" class="menuIcon">☰</label>
+
+<div class="sidebar">
+<a href="index.html">Home</a>
+<a href="localnews.html">Local News</a>
+<a href="community.html" class="active">Community</a>
+<a href="opinion.html">Opinion</a>
+<a href="future.html">Future</a>
+</div>
+
+<div class="page">
+
+<div class="header">
+
+<div class="title">Malanday Community Times</div>
+
+<div class="tagline">
+The Voice of Barangay Malanday
+</div>
+
+<div class="info">
+March 15, 2026 | Community Features | Philippines
+</div>
+
+</div>
+
+<div class="breaking">
+COMMUNITY ISSUES AND EVENTS AFFECTING SOCIETY
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+<div class="card">
+
+<h2>Top 5 Community Issues in the Philippines</h2>
+
+<ol class="issues">
+
+<li>
+<strong>☆ Flooding in Urban Communities:</strong> Many areas in the Philippines experience flooding due to heavy rainfall and clogged drainage systems.
+</li>
+
+<li>
+<strong>☆ Waste Management Problems:</strong> Improper garbage disposal continues to affect environmental cleanliness and contributes to pollution.
+</li>
+
+<li>
+<strong>☆ Traffic Congestion:</strong> Major cities face serious traffic problems because of increasing vehicles and limited road space.
+</li>
+
+<li>
+<strong>☆ Disaster Preparedness:</strong> Communities must prepare for typhoons, earthquakes, and other natural disasters common in the country.
+</li>
+
+<li>
+<strong>☆ Youth Participation in Community Development:</strong> Encouraging young people to join volunteer programs helps strengthen community leadership.
+</li>
+
+</ol>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Upcoming Community Events in Marikina</h2>
+
+<ul class="events">
+
+<li><span class="highlight">Marikina River Clean-Up Drive</span></li>
+
+<li><span class="highlight">Community Health and Wellness Program</span></li>
+
+<li><span class="highlight">Youth Basketball and Sports Tournament</span></li>
+
+<li><span class="highlight">Environmental Awareness Campaign</span></li>
+
+<li><span class="highlight">Barangay Cultural and Food Festival</span></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Malanday Community Times</p>
+
+<p>Designed by <span>Sie</span></p>
+
+</footer>
+
+</div>
+
+</body>
+</html>
