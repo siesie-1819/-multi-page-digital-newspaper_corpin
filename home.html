@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Malanday Community Times</title>
 
+<style>
+
+body{
+margin:0;
+font-family:Georgia, serif;
+background:#f8f9fb;
+}
+
+.page{
+transition:0.4s;
+}
+
+#menuToggle{
+display:none;
+}
+
+.menuIcon{
+position:fixed;
+top:18px;
+right:18px;
+font-size:28px;
+background:#ffb7a5;
+color:white;
+padding:10px 14px;
+border-radius:6px;
+cursor:pointer;
+z-index:1000;
+}
+
+.menuIcon:hover{
+background:#ff8f70;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#2c2c2c;
+padding-top:70px;
+transition:0.4s;
+}
+
+.sidebar a{
+display:block;
+padding:15px;
+color:white;
+text-decoration:none;
+font-size:18px;
+border-bottom:1px solid #444;
+}
+
+.sidebar a:hover{
+background:#ffb7a5;
+}
+
+.sidebar a.active{
+background:#ffb7a5;
+font-weight:bold;
+}
+
+#menuToggle:checked ~ .sidebar{
+left:0;
+}
+
+#menuToggle:checked ~ .page{
+margin-left:250px;
+}
+
+.header{
+background:linear-gradient(90deg,#ffd6c9,#ffe5dd);
+text-align:center;
+padding:35px 20px;
+border-bottom:5px solid #ffb7a5;
+}
+
+.title{
+font-size:48px;
+border:4px solid #ffb7a5;
+display:inline-block;
+padding:12px 30px;
+color:#444;
+background:white;
+border-radius:8px;
+}
+
+.title::before{
+content:"✦ ";
+color:#ff8f70;
+}
+
+.title::after{
+content:" ✦";
+color:#ff8f70;
+}
+
+.tagline{
+font-style:italic;
+font-family:"Trebuchet MS", sans-serif;
+margin-top:8px;
+font-size:18px;
+}
+
+.info{
+font-size:14px;
+margin-top:6px;
+}
+
+.breaking{
+background:#ffb7a5;
+text-align:center;
+padding:12px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.content{
+padding:35px;
+}
+
+.hero{
+width:100%;
+max-width:900px;
+height:380px;
+object-fit:cover;
+display:block;
+margin:auto;
+border-radius:12px;
+transition:0.4s;
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hero:hover{
+transform:scale(1.04);
+}
+
+.grid{
+margin-top:35px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.1);
+transition:0.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:8px;
+margin-bottom:12px;
+transition:0.3s;
+}
+
+.card img:hover{
+transform:scale(1.05);
+}
+
+.card h3{
+margin-top:0;
+color:#ff8f70;
+}
+
+.highlight{
+background:#fff3ef;
+padding:3px 6px;
+border-radius:4px;
+font-weight:bold;
+}
+
+footer{
+background:#2c2c2c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+footer span{
+color:#ffb7a5;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menuToggle">
+
+<label for="menuToggle" class="menuIcon">☰</label>
+
+<div class="sidebar">
+<a href="index.html" class="active">Home</a>
+<a href="localnews.html">Local News</a>
+<a href="community.html">Community</a>
+<a href="opinion.html">Opinion</a>
+<a href="future.html">Future</a>
+</div>
+
+<div class="page">
+
+<div class="header">
+
+<div class="title">Malanday Community Times</div>
+
+<div class="tagline">
+The Voice of Barangay Malanday
+</div>
+
+<div class="info">
+March 15, 2026 | Weekend Edition | Malanday, Marikina City
+</div>
+
+</div>
+
+<div class="breaking">
+WELCOME: Your trusted source of community information
+</div>
+<div class="content">
+
+<img class="hero" src="https://scontent.fmnl33-2.fna.fbcdn.net/v/t39.30808-6/405230294_289739124052917_5190087989318293829_n.png?_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=MgfvaqILj28Q7kNvwErvgaU&_nc_oc=Adnu1yEf9THB-eae98N5gWO1khshvE9P9Uk9rpJTMrAKQQjVksfuBot-QrpZ6XK5GpE&_nc_zt=23&_nc_ht=scontent.fmnl33-2.fna&_nc_gid=I-DvDFq0b_muZ3R9GZGb4w&_nc_ss=8&oh=00_Afz8xOHuM1qeGhKZ17JCYJVEXTB6CtO7kcVg3N9702b2LA&oe=69BBE9D4">
+
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://scontent.fmnl33-2.fna.fbcdn.net/v/t39.30808-6/405230294_289739124052917_5190087989318293829_n.png?_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=MgfvaqILj28Q7kNvwErvgaU&_nc_oc=Adnu1yEf9THB-eae98N5gWO1khshvE9P9Uk9rpJTMrAKQQjVksfuBot-QrpZ6XK5GpE&_nc_zt=23&_nc_ht=scontent.fmnl33-2.fna&_nc_gid=I-DvDFq0b_muZ3R9GZGb4w&_nc_ss=8&oh=00_Afz8xOHuM1qeGhKZ17JCYJVEXTB6CtO7kcVg3N9702b2LA&oe=69BBE9D4">
+
+<h3>About Our Community</h3>
+
+<p>
+Barangay Malanday is known for its active residents and 
+<span class="highlight">strong community cooperation</span>. 
+This newspaper highlights important updates and stories 
+that matter to our neighbors.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://hronlineph.com/wp-content/uploads/2012/08/pmt-mag-med-mission-small.jpg?w=750">
+
+<h3>Community Awareness</h3>
+
+<p>
+Residents are encouraged to stay informed about 
+<span class="highlight">local announcements and programs</span> 
+that support safety, development, and environmental care.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://static.wixstatic.com/media/6c3b8a_702f3e0a10fb471998b289f79dcd57ba.jpg/v1/fill/w_488,h_332,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6c3b8a_702f3e0a10fb471998b289f79dcd57ba.jpg">
+
+<h3>Education and Youth</h3>
+
+<p>
+Young people play an important role in shaping the future 
+of Malanday through <span class="highlight">education and youth activities</span> 
+organized within the community.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Malanday Community Times</p>
+
+<p>Designed by <span>Sie</span></p>
+
+</footer>
+
+</div>
+
+</body>
+</html>
